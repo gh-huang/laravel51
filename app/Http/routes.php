@@ -14,3 +14,17 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('register', 'Auth\AuthController@getRegister');
+
+//auth route
+// Route::group(['namespace' => 'auth'], function () {
+// 	//Authentication routes
+// 	Route::get('login', 'AuthController@getLogin');
+// 	Route::post('login', 'AuthController@postLogin');
+// 	Route::get('logout', 'AuthController@getLogout');
+
+// 	//Registration routes
+// 	Route::get('register', 'AuthController@getRegister');
+// 	Route::post('register', 'AuthController@postRegister');
+// });
