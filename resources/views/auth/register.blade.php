@@ -12,6 +12,11 @@
     </div>
 
     <div>
+        Phone-number
+        <input type="number" name="phone" value="{{ old('phone') }}">
+    </div>
+
+    <div>
         Password
         <input type="password" name="password">
     </div>
