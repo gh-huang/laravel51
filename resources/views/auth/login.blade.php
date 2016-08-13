@@ -20,3 +20,7 @@
         <button type="submit">Login</button>
     </div>
 </form>
+
+<div>
+    <button><a href="/password/email">重置秘密</a></button>
+</div>

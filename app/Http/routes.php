@@ -40,5 +40,5 @@ Route::group(['namespace' => 'auth'], function () {
 
 	//Password reset routes
 	Route::get('password/reset/{token}', 'PasswordController@getReset');
-	Route::get('password/reset', 'PasswordController@postReset');
+	Route::post('password/reset', 'PasswordController@postReset');
 });
