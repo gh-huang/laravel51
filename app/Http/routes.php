@@ -19,7 +19,9 @@ Route::get('phpinfo', function () {
 	phpinfo();
 });
 
-Route::get('admin', 'HomeController@index');
+Route::group(['middleware' => 'auth'], function () {
+	Route::get('admin', 'HomeController@index');
+});
 
 // auth route
 Route::group(['namespace' => 'auth'], function () {
@@ -31,4 +33,12 @@ Route::group(['namespace' => 'auth'], function () {
 	//Registration routes
 	Route::get('register', 'AuthController@getRegister');
 	Route::post('register', 'AuthController@postRegister');
+
+	//Password reset link request routes
+	Route::get('password/email', 'PasswordController@getEmail');
+	Route::post('password/email', 'PasswordController@postEmail');
+
+	//Password reset routes
+	Route::get('password/reset/{token}', 'PasswordController@getReset');
+	Route::get('password/reset', 'PasswordController@postReset');
 });
