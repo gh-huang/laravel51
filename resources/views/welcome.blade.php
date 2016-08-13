@@ -36,6 +36,8 @@
         </style>
     </head>
     <body>
+        <a href="/login">登录</a>
+        <a href="/register">注册</a>
         <div class="container">
             <div class="content">
                 <div class="title">Laravel 5</div>
