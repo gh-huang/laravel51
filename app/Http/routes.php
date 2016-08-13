@@ -41,4 +41,8 @@ Route::group(['namespace' => 'auth'], function () {
 	//Password reset routes
 	Route::get('password/reset/{token}', 'PasswordController@getReset');
 	Route::post('password/reset', 'PasswordController@postReset');
+
+	//github
+	Route::get('/auth/github', 'AuthController@redirectToProvider');
+	Route::get('/auth/github/callback', 'AuthController@handleProviderCallback');
 });
