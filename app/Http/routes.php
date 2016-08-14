@@ -23,6 +23,10 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('admin', 'HomeController@index');
 });
 
+Route::get('/hello/{id}', function ($id) {
+	echo 'hello ' . $id;
+});
+
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
