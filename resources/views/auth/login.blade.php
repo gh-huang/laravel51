@@ -22,7 +22,7 @@
 </form>
 
 <div>
-    <button><a href="/password/email">重置秘密</a></button>
+    <button><a href="/password/email">重置密码</a></button>
 </div>
 <div>
     <button><a href="/auth/github">Github登录</a></button>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Admin</title>
 </head>
 <body>
 <p>这是后台首页</p>
