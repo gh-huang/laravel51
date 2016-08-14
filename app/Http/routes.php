@@ -31,6 +31,10 @@ Route::get('/id/{id}/name/{name}', function ($id, $name) {
 	echo "hello " . $name . " id=" . $id;
 });
 
+Route::get('/hello/laravel', ['as'=>'laravel', function () {
+	echo "hello laravel";
+}]);
+
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
