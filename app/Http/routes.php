@@ -27,6 +27,10 @@ Route::get('/hello/{id}', function ($id) {
 	echo 'hello ' . $id;
 });
 
+Route::get('/id/{id}/name/{name}', function ($id, $name) {
+	echo "hello " . $name . " id=" . $id;
+});
+
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
