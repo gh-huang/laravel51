@@ -35,6 +35,10 @@ Route::get('/hello/laravel', ['as'=>'laravel', function () {
 	echo "hello laravel";
 }]);
 
+Route::get('/as', function () {
+	return route('laravel');
+});
+
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
