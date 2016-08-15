@@ -14,4 +14,16 @@ class RequestController extends Controller
         $input = $request->input('test');
         echo $input;
     }
+
+    public function getUrl(Request $request)
+    {
+        if (!$request->is('request/*')) {
+            abort(404);
+        }
+        $uri = $request->path();
+        $url = $request->url();
+        echo $uri;
+        echo "<br>";
+        echo $url;
+    }
 }
