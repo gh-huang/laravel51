@@ -95,6 +95,14 @@ Route::post('testCsrf', function () {
 //Implicit Controllers
 Route::controller('request', 'RequestController');
 
+//response
+Route::get('testResponse', function () {
+	$content = 'Hello Laravel';
+	$status = 200;
+	$value = 'text/html;charset=utf-8';
+	return response($content, $status)->header('Content-Type', $value)->withCookie('site', 'Laravel51.com', 30, '/', 'laravel.app');
+});
+
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
