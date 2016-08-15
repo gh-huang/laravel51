@@ -100,7 +100,14 @@ Route::get('testResponse', function () {
 	$content = 'Hello Laravel';
 	$status = 200;
 	$value = 'text/html;charset=utf-8';
-	return response($content, $status)->header('Content-Type', $value)->withCookie('site', 'Laravel51.com', 30, '/', 'laravel.app');
+	// return response($content, $status)->header('Content-Type', $value)->withCookie('site', 'Laravel51.com', 30, '/', 'laravel.app');
+	// return response()->view('test/hello', ['message' => 'Hello Laravel51'])->header('Content', $value);
+	// return view('test/hello', ['message' => 'Hello World']);
+	// return response()->json(['name' => 'laravel51', 'passwd' => 'laravel51.com']);
+	return response()->download(
+		realpath(base_path('public/images')) . '/IMG_1501.JPG',
+		'Laravel.jpg'
+	);
 });
 
 // auth route
