@@ -39,6 +39,10 @@ Route::get('/as', function () {
 	return route('laravel');
 });
 
+Route::get('/redirect', function () {
+	return redirect()->route('laravel');
+});
+
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
