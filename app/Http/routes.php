@@ -51,6 +51,21 @@ Route::get('/rename/{name}', function ($name) {
 	return redirect()->route('name', $name);
 });
 
+//test middleware
+Route::group(['middleware' => 'test'], function () {
+	Route::get('/middleware/write', function () {
+		echo "this is middleware write";
+	});
+
+	Route::get('/middleware/update', function () {
+		echo "this is middleware update";
+	});
+});
+
+Route::get('/age/refuse', ['as' => 'refuse', function () {
+	echo "未成年禁止入内";
+}]);
+
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
