@@ -13,11 +13,11 @@ class TestMiddleware
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle($request, Closure $next, $gender)
     {
-        if ($request->input('age') < 18) {
-            return redirect()->route('refuse');
+        if ($request->input('age') >= 18 && $gender == $request->input('gender')) {
+            return $next($request);
         }
-        return $next($request);
+        return redirect()->route('refuse');
     }
 }

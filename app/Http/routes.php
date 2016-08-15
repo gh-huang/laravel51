@@ -52,7 +52,7 @@ Route::get('/rename/{name}', function ($name) {
 });
 
 //test middleware
-Route::group(['middleware' => 'test'], function () {
+Route::group(['middleware' => 'test:male'], function () {
 	Route::get('/middleware/write', function () {
 		echo "this is middleware write";
 	});
@@ -63,7 +63,7 @@ Route::group(['middleware' => 'test'], function () {
 });
 
 Route::get('/age/refuse', ['as' => 'refuse', function () {
-	echo "未成年禁止入内";
+	echo "18岁以上男子才能访问！！";
 }]);
 
 //Sub-Domain Routing
