@@ -31,7 +31,7 @@ Route::get('/id/{id}/name/{name}', function ($id, $name) {
 	echo "hello " . $name . " id=" . $id;
 });
 
-Route::get('/hello/laravel', ['as'=>'laravel', function () {
+Route::get('/hello/laravel', ['as' => 'laravel', function () {
 	echo "hello laravel";
 }]);
 
@@ -41,6 +41,14 @@ Route::get('/as', function () {
 
 Route::get('/redirect', function () {
 	return redirect()->route('laravel');
+});
+
+Route::get('/name/{name}', ['as' => 'name', function ($name) {
+	echo "my name is " . $name;
+}]);
+
+Route::get('/rename/{name}', function ($name) {
+	return redirect()->route('name', $name);
 });
 
 // auth route
