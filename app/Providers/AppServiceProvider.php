@@ -13,7 +13,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        //share data
+        view()->share('sitename', 'laravel51');
+
+        //view composer
+        view()->composer('test/hello', function ($view) {
+            $view->with('user', array('name' => 'test', 'avatar' => '/path/to/test.jpg'));
+        });
     }
 
     /**

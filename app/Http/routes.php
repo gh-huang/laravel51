@@ -110,6 +110,20 @@ Route::get('testResponse', function () {
 	);
 });
 
+Route::get('testResponseRedirect', function () {
+	return redirect()->route('laravel');
+});
+
+//share data
+Route::get('testViewHello', function () {
+	return view('test/hello');
+});
+
+Route::get('testViewHome', function () {
+	return view('test/home');
+});
+
+
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
