@@ -92,6 +92,9 @@ Route::post('testCsrf', function () {
 	return 'success';
 });
 
+//Implicit Controllers
+Route::controller('request', 'RequestController');
+
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
