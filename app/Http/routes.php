@@ -77,6 +77,21 @@ Route::group(['domain' => '{service}.laravel51.com'], function () {
 	});
 });
 
+//CSRF
+Route::get('testCsrf',function(){
+    $csrf_field = csrf_field();
+    $html = <<<GET
+        <form method="POST" action="/testCsrf">
+            <input type="submit" value="Test"/>
+        </form>
+GET;
+    return $html;
+});
+
+Route::post('testCsrf', function () {
+	return 'success';
+});
+
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
