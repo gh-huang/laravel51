@@ -66,6 +66,17 @@ Route::get('/age/refuse', ['as' => 'refuse', function () {
 	echo "未成年禁止入内";
 }]);
 
+//Sub-Domain Routing
+Route::group(['domain' => '{service}.laravel51.com'], function () {
+	Route::get('/write/domain', function ($service) {
+		return "Write FROM {$service}.laravel51.com";
+	});
+
+	Route::get('/update/domain', function ($service) {
+		return "Update FROM {$service}.laravel51.com";
+	});
+});
+
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
