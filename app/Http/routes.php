@@ -126,6 +126,12 @@ Route::get('testViewHome', function () {
 //provider
 Route::resource('test', 'TestController');
 
+//learn database
+Route::get('database/insert', 'DatabaseController@insert');
+Route::get('database/select', 'DatabaseController@select');
+Route::get('database/update', 'DatabaseController@update');
+Route::get('database/delete', 'DatabaseController@delete');
+Route::get('database/statement', 'DatabaseController@statement');
 
 // auth route
 Route::group(['namespace' => 'auth'], function () {

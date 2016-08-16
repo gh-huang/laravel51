@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddPhoneBigintegerUsers extends Migration
+class AddPhoneToUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -24,6 +24,8 @@ class AddPhoneBigintegerUsers extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('users', function (Blueprint $table) {
+            //
+        });
     }
 }
