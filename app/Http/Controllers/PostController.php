@@ -17,8 +17,14 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
-        dd($posts);
+        // $posts = Post::all();
+        // $posts = Post::where('id', '>', '28')->orderBy('id', 'asc')->take(3)->get();
+        Post::chunk(2, function ($posts) {
+            foreach ($posts as $post) {
+                echo $post->title . '<br>';
+            }
+        });
+        // dd($posts);
     }
 
     /**

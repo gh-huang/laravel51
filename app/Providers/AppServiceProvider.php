@@ -23,7 +23,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         DB::listen(function($sql, $bindings, $time) {
-            echo 'SQL语句执行: ' . $sql . '参数: ' . json_encode($bindings) . '耗时: ' . $time . 'ms';
+            echo 'SQL语句执行: ' . $sql . '参数: ' . json_encode($bindings) . '耗时: ' . $time . 'ms<br>';
         });
 
     }
