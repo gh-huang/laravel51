@@ -149,8 +149,9 @@ return [
          * Laravel
          */
         Laravel\Socialite\SocialiteServiceProvider::class,
+
         /*
-         * Test
+         * TestProvider
          */
         App\Providers\TestServiceProvider::class,
 
