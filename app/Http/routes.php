@@ -139,6 +139,10 @@ Route::get('qb/select', 'QbController@select');
 Route::get('qb/update', 'QbController@update');
 Route::get('qb/delete', 'QbController@delete');
 
+//learn Eloquent ORM
+Route::get('eloquent', 'PostController@index');
+Route::get('eloquent/create', 'PostController@create');
+
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
