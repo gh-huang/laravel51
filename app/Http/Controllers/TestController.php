@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Learnlaravel\Test\Contracts\TestContract;
+use TestClass;
 
 class TestController extends Controller
 {
@@ -24,8 +25,9 @@ class TestController extends Controller
      */
     public function index()
     {
-        $this->test->callMe(\Route::current()->getActionName());
+        // $this->test->callMe(\Route::current()->getActionName());
         // $this->test->sayHello();
+        TestClass::doSomething();
     }
 
     /**

@@ -49,6 +49,6 @@ class TestServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return ['App\Learnlaravel\Test\Contracts\TestContract'];
+        return ['App\Learnlaravel\Test\Contracts\TestContract', 'test'];
     } 
 }
