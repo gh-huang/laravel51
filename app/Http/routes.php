@@ -123,6 +123,9 @@ Route::get('testViewHome', function () {
 	return view('test/home');
 });
 
+//provider
+Route::resource('test', 'TestController');
+
 
 // auth route
 Route::group(['namespace' => 'auth'], function () {
