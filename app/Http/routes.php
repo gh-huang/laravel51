@@ -126,12 +126,18 @@ Route::get('testViewHome', function () {
 //provider
 Route::resource('test', 'TestController');
 
-//learn database
+//learn database facade
 Route::get('database/insert', 'DatabaseController@insert');
 Route::get('database/select', 'DatabaseController@select');
 Route::get('database/update', 'DatabaseController@update');
 Route::get('database/delete', 'DatabaseController@delete');
 Route::get('database/statement', 'DatabaseController@statement');
+
+//learn database Query Builder
+Route::get('qb/insert', 'QbController@insert');
+Route::get('qb/select', 'QbController@select');
+Route::get('qb/update', 'QbController@update');
+Route::get('qb/delete', 'QbController@delete');
 
 // auth route
 Route::group(['namespace' => 'auth'], function () {
