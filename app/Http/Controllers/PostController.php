@@ -59,6 +59,20 @@ class PostController extends Controller
     }
 
     /**
+     * create data form eloquent orm create method
+     */
+    public function createdata()
+    {
+        $input = [
+            'title' => 'TitleCreate',
+            'content' => 'create content',
+            'user_id' => '2',
+        ];
+        $post = Post::create($input);
+        dd($post);
+    }
+
+    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request

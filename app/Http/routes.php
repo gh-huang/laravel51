@@ -143,6 +143,7 @@ Route::get('qb/delete', 'QbController@delete');
 Route::get('eloquent', 'PostController@index');
 Route::get('eloquent/create', 'PostController@create');
 Route::get('eloquent/save', 'PostController@savedata');
+Route::get('eloquent/createdata', 'PostController@createdata');
 
 // auth route
 Route::group(['namespace' => 'auth'], function () {
