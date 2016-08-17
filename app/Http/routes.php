@@ -154,6 +154,10 @@ Route::get('eloquent/scope', 'PostController@scope');
 Route::get('eloquent/scopeparam', 'PostController@scopeparam');
 Route::get('eloquent/postevent', 'PostController@postevent');
 
+
+Route::get('eloquent/relationships', 'UserController@index');
+Route::get('eloquent/useraccount', 'UserController@useraccount');
+
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes

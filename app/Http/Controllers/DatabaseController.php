@@ -19,6 +19,7 @@ class DatabaseController extends Controller
     {
         DB::insert('insert into users (name, email, password) values (?, ?, ?)', ['laravel', 'laravel@test.com', '123']);
         DB::insert('insert into users (name, email, password) values (?, ?, ?)', ['taylor', 'taylor@qq.com', '456']);
+        DB::insert('insert into user_accounts (user_id, qq, weixin, weibo) values (?, ?, ?, ?)', ['1', '123456', 'testweixin', 'testweibo']);
     }
 
     public function select()
