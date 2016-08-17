@@ -87,6 +87,23 @@ class PostController extends Controller
     }
 
     /**
+     * update data form eloquent orm update method
+     */
+    public function updatecreate()
+    {
+        $input = [
+            'title' => 'testuptitle',
+            'content' => 'updateconten',
+        ];
+        $post = Post::find(34);
+        if ($post->update($input)) {
+            echo "success";
+        } else {
+            echo "faile";
+        }
+    }
+
+    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
