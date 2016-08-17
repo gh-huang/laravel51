@@ -142,6 +142,7 @@ Route::get('qb/delete', 'QbController@delete');
 //learn Eloquent ORM
 Route::get('eloquent', 'PostController@index');
 Route::get('eloquent/create', 'PostController@create');
+Route::get('eloquent/save', 'PostController@savedata');
 
 // auth route
 Route::group(['namespace' => 'auth'], function () {

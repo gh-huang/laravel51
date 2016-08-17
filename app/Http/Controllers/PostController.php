@@ -42,6 +42,23 @@ class PostController extends Controller
     }
 
     /**
+     * save data form eloquent orm
+     * 
+     */
+    public function savedata()
+    {
+        $post = new Post;
+        $post->title = 'TitleTest';
+        $post->content = 'test content';
+        $post->user_id = 1;
+        if ($post->save()) {
+            echo "success";
+        } else {
+            echo "faile";
+        }
+    }
+
+    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
