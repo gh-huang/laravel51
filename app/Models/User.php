@@ -42,4 +42,10 @@ class User extends Model implements AuthenticatableContract,
     {
         return $this->hasOne('App\Models\UserAccount');
     }
+
+    //one to many
+    public function posts()
+    {
+        return $this->hasMany('App\Models\Post');
+    }
 }

@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\UserAccount;
+use App\Models\Post;
 
 class UserController extends Controller
 {
@@ -28,6 +29,24 @@ class UserController extends Controller
     public function useraccount()
     {
         $user = UserAccount::find(1)->user;
+        dd($user);
+    }
+
+    /**
+     * one to many
+     */
+    public function onetomany()
+    {
+        $posts = User::find(1)->posts()->where('id', '>', 32)->get();
+        dd($posts);
+    }
+
+    /**
+     * one to many user
+     */
+    public function onetomanyuser()
+    {
+        $user = Post::find(23)->user;
         dd($user);
     }
 

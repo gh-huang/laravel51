@@ -157,6 +157,8 @@ Route::get('eloquent/postevent', 'PostController@postevent');
 
 Route::get('eloquent/relationships', 'UserController@index');
 Route::get('eloquent/useraccount', 'UserController@useraccount');
+Route::get('eloquent/onetomany', 'UserController@onetomany');
+Route::get('eloquent/onetomanyuser', 'UserController@onetomanyuser');
 
 // auth route
 Route::group(['namespace' => 'auth'], function () {
