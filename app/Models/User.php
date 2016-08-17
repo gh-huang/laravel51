@@ -48,4 +48,10 @@ class User extends Model implements AuthenticatableContract,
     {
         return $this->hasMany('App\Models\Post');
     }
+
+    //many to many
+    public function roles()
+    {
+        return $this->belongsToMany('App\Models\Role');
+    }
 }

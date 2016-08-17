@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\UserAccount;
 use App\Models\Post;
+use App\Models\Role;
 
 class UserController extends Controller
 {
@@ -48,6 +49,30 @@ class UserController extends Controller
     {
         $user = Post::find(23)->user;
         dd($user);
+    }
+
+    /**
+     * many to many
+     */
+    public function manytomany()
+    {
+        $user = User::find(1);
+        $roles = $user->roles;
+        echo 'User#' . $user->name . '\'s roles:<br>';
+        foreach ($roles as $role) {
+            echo $role->name . '<br>';
+        }
+        echo "<hr>";
+        $role = Role::find(4);
+        $users = $role->users;
+        echo 'Role#' . $role->name . ' users:<br>';
+        foreach ($users as $user) {
+            echo $user->name . '<br>';
+        }
+        echo "<hr>";
+        foreach ($roles as $role) {
+            echo $role->pivot->role_id . '<br>';
+        }
     }
 
     /**
