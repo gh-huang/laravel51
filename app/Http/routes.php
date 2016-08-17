@@ -161,6 +161,8 @@ Route::get('eloquent/onetomany', 'UserController@onetomany');
 Route::get('eloquent/onetomanyuser', 'UserController@onetomanyuser');
 Route::get('eloquent/manytomany', 'UserController@manytomany');
 
+Route::get('eloquent/createcountries', 'UserController@createcountries');
+
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes

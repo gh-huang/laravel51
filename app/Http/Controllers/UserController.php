@@ -10,6 +10,7 @@ use App\Models\User;
 use App\Models\UserAccount;
 use App\Models\Post;
 use App\Models\Role;
+use App\Models\Country;
 
 class UserController extends Controller
 {
@@ -73,6 +74,21 @@ class UserController extends Controller
         foreach ($roles as $role) {
             echo $role->pivot->role_id . '<br>';
         }
+    }
+
+    /**
+     * create countries
+     */
+    public function createcountries()
+    {
+        $china = [
+            'name' => 'china'
+        ];
+        $american = [
+            'name' => 'american'
+        ];
+        Country::create($china);
+        Country::create($american);
     }
 
     /**
