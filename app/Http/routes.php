@@ -149,6 +149,7 @@ Route::get('eloquent/updatecreate', 'PostController@updatecreate');
 Route::get('eloquent/deletedata', 'PostController@deletedata');
 Route::get('eloquent/softdelete', 'PostController@softdelete');
 Route::get('eloquent/withsoftdelete', 'PostController@withsoftdelete');
+Route::get('eloquent/recoversoftdelete', 'PostController@recoversoftdelete');
 
 // auth route
 Route::group(['namespace' => 'auth'], function () {

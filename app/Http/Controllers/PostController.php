@@ -17,13 +17,13 @@ class PostController extends Controller
      */
     public function index()
     {
-        // $posts = Post::all();
+        $posts = Post::all();
         // $posts = Post::where('id', '>', '28')->orderBy('id', 'asc')->take(3)->get();
-        Post::chunk(2, function ($posts) {
-            foreach ($posts as $post) {
-                echo $post->title . '<br>';
-            }
-        });
+        // Post::chunk(2, function ($posts) {
+        //     foreach ($posts as $post) {
+        //         echo $post->title . '<br>';
+        //     }
+        // });
         dd($posts);
     }
 
@@ -144,8 +144,25 @@ class PostController extends Controller
      */
     public function withsoftdelete()
     {
-        $posts = Post::withTrashed()->get();
+        //select all include softdelete
+        // $posts = Post::withTrashed()->get();
+        //select softdelete
+        $posts = Post::onlyTrashed()->get();
         dd($posts);
+    }
+
+    /**
+     * recover softdelete data
+     */
+    public function recoversoftdelete()
+    {
+        $post = Post::withTrashed()->find(32);
+        if ($post->restore()) {
+            echo "recover success";
+            dd($post);
+        } else {
+            echo "recover faile";
+        }
     }
 
     /**
