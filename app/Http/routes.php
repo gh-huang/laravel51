@@ -144,6 +144,7 @@ Route::get('eloquent', 'PostController@index');
 Route::get('eloquent/create', 'PostController@create');
 Route::get('eloquent/save', 'PostController@savedata');
 Route::get('eloquent/createdata', 'PostController@createdata');
+Route::get('eloquent/updatedata', 'PostController@updatedata');
 
 // auth route
 Route::group(['namespace' => 'auth'], function () {

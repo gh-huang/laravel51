@@ -73,6 +73,20 @@ class PostController extends Controller
     }
 
     /**
+     * update data form eloquent orm save method
+     */
+    public function updatedata()
+    {
+        $post = Post::find(33);
+        $post->title = 'updatetitle';
+        if ($post->save()) {
+            echo "success";
+        } else {
+            echo "faile";
+        }
+    }
+
+    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
