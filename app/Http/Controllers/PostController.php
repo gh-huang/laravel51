@@ -54,7 +54,7 @@ class PostController extends Controller
         if ($post->save()) {
             echo "success";
         } else {
-            echo "faile";
+            echo "false";
         }
     }
 
@@ -82,7 +82,7 @@ class PostController extends Controller
         if ($post->save()) {
             echo "success";
         } else {
-            echo "faile";
+            echo "false";
         }
     }
 
@@ -99,7 +99,7 @@ class PostController extends Controller
         if ($post->update($input)) {
             echo "success";
         } else {
-            echo "faile";
+            echo "false";
         }
     }
 
@@ -112,7 +112,7 @@ class PostController extends Controller
         // if ($post->delete()) {
         //     echo "delete success";
         // } else {
-        //     echo "delete faile";
+        //     echo "delete false";
         // }
         $deleted = Post::destroy(33);
         if ($deleted) {
@@ -120,7 +120,7 @@ class PostController extends Controller
             echo "<hr>";
             echo $deleted;
         } else {
-            echo "delete faile";
+            echo "delete false";
         }
     }
 
@@ -135,7 +135,7 @@ class PostController extends Controller
             echo "softdelete success";
             dd($post);
         } else {
-            echo "softdelete faile";
+            echo "softdelete false";
         }
     }
 
@@ -161,7 +161,7 @@ class PostController extends Controller
             echo "recover success";
             dd($post);
         } else {
-            echo "recover faile";
+            echo "recover false";
         }
     }
 
@@ -184,6 +184,25 @@ class PostController extends Controller
         $posts = Post::popular()->status(0)->orderBy('id', 'asc')->get();
         foreach ($posts as $post) {
             echo '&lt;' . $post->title . '&gt ' . $post->id . '  ' . $post->status . '<br>';
+        }
+    }
+
+    /**
+     * event
+     */
+    public function postevent()
+    {
+        $input = [
+            'title' => 'test model event',
+            'content' => 'content event',
+            'user_id' => '1',
+        ];
+        $post = Post::create($input);
+        if (!$post->exists) {
+            echo "create post false";
+            exit();
+        } else {
+            echo '&lt;' . $post->title . '&gt;create success';
         }
     }
 

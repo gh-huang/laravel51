@@ -152,6 +152,7 @@ Route::get('eloquent/withsoftdelete', 'PostController@withsoftdelete');
 Route::get('eloquent/recoversoftdelete', 'PostController@recoversoftdelete');
 Route::get('eloquent/scope', 'PostController@scope');
 Route::get('eloquent/scopeparam', 'PostController@scopeparam');
+Route::get('eloquent/postevent', 'PostController@postevent');
 
 // auth route
 Route::group(['namespace' => 'auth'], function () {
