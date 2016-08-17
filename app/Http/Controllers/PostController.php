@@ -104,6 +104,27 @@ class PostController extends Controller
     }
 
     /**
+     * delete data form eloquent orm delete method
+     */
+    public function deletedata()
+    {
+        // $post = Post::find(34);
+        // if ($post->delete()) {
+        //     echo "delete success";
+        // } else {
+        //     echo "delete faile";
+        // }
+        $deleted = Post::destroy(33);
+        if ($deleted) {
+            echo "delete success";
+            echo "<hr>";
+            echo $deleted;
+        } else {
+            echo "delete faile";
+        }
+    }
+
+    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
