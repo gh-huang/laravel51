@@ -13,4 +13,15 @@ class Post extends Model
 
     //softdeletes
     protected $dates = ['delete_at'];
+
+    //Query Scopes
+    public function scopePopular($query)
+    {
+    	return $query->where('user_id', 1);
+    }
+
+    public function scopeStatus($query, $status = 1)
+    {
+    	return $query->where('status', $status);
+    }
 }

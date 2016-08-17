@@ -166,6 +166,28 @@ class PostController extends Controller
     }
 
     /**
+     * scope query
+     */
+    public function scope()
+    {
+        $posts = Post::popular()->orderBy('id', 'asc')->get();
+        foreach ($posts as $post) {
+            echo '&lt;' . $post->title . '&gt; ' . $post->user_id . '<br>';
+        }
+    }
+
+    /**
+     * scope query param
+     */
+    public function scopeparam()
+    {
+        $posts = Post::popular()->status(0)->orderBy('id', 'asc')->get();
+        foreach ($posts as $post) {
+            echo '&lt;' . $post->title . '&gt ' . $post->id . '  ' . $post->status . '<br>';
+        }
+    }
+
+    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
