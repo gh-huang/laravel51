@@ -24,7 +24,7 @@ class PostController extends Controller
                 echo $post->title . '<br>';
             }
         });
-        // dd($posts);
+        dd($posts);
     }
 
     /**
@@ -122,6 +122,30 @@ class PostController extends Controller
         } else {
             echo "delete faile";
         }
+    }
+
+    /**
+     * softdelete data
+     */
+    public function softdelete()
+    {
+        $post = Post::find(32);
+        $post->delete();
+        if ($post->trashed()) {
+            echo "softdelete success";
+            dd($post);
+        } else {
+            echo "softdelete faile";
+        }
+    }
+
+    /**
+     * read softdelete data
+     */
+    public function withsoftdelete()
+    {
+        $posts = Post::withTrashed()->get();
+        dd($posts);
     }
 
     /**
