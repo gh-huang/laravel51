@@ -11,7 +11,7 @@ class HelloLaravelAcademy extends Command
      *
      * @var string
      */
-    protected $signature = 'laravel:academy';
+    protected $signature = 'laravel:academy {name=Laravel5.1} {--mark=!}';
 
     /**
      * The console command description.
@@ -37,6 +37,12 @@ class HelloLaravelAcademy extends Command
      */
     public function handle()
     {
-        echo "Hello Laravel Hello World";
+        $name = $this->argument('name');
+        $mark = $this->option('mark');
+        $string = 'Hello ' . $name;
+        if ($mark) {
+            $string .= $mark;
+        }
+        echo $string . "\n";
     }
 }
