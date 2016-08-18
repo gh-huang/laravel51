@@ -127,6 +127,23 @@ class UserController extends Controller
     }
 
     /**
+     * Polymorphic relations many
+     */
+    public function polymorphictag()
+    {
+        // $post = Post::find(1);
+        // $tags = $post->tags;
+        // dd($tags);
+        // $video = Video::find(3);
+        // $tags = $video->tags;
+        // dd($tags);
+        $tag = \App\Models\Tag::find(1);
+        // $posts = $tag->posts;
+        $videos = $tag->videos;
+        dd($videos);
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response

@@ -167,6 +167,8 @@ Route::get('eloquent/manythrough', 'UserController@manythrough');
 Route::get('eloquent/polymorphicvideo', 'UserController@polymorphicvideo');
 Route::get('eloquent/polymorphicpost', 'UserController@polymorphicpost');
 
+Route::get('eloquent/polymorphictag', 'UserController@polymorphictag');
+
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes

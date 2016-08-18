@@ -41,4 +41,10 @@ class Post extends Model
     {
         return $this->morphMany('App\Models\Comment', 'item');
     }
+
+    //polymorphic relations to many
+    public function tags()
+    {
+        return $this->morphToMany('App\Models\Tag', 'taggable');
+    }
 }
