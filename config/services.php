@@ -38,7 +38,7 @@ return [
     'github' => [
         'client_id' => env('GITHUB_CLIENT_ID'),
         'client_secret' => env('GITHUB_CLIENT_SECRET'),
-        'redirect' => 'http://laravel51.com/auth/github/callback',
+        'redirect' => 'http://www.laravel51.com/auth/github/callback',
     ],
 
 ];
