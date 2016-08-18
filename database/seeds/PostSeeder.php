@@ -11,7 +11,7 @@ class PostSeeder extends Seeder
      */
     public function run()
     {
-        for ($i=0; $i < 10; $i++) {
+        for ($i = 0; $i < 10; $i++) {
         	\App\Models\Post::create([
         		'title' => 'Title '. $i,
         		'content' => 'Content '. $i,
