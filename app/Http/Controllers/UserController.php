@@ -92,6 +92,20 @@ class UserController extends Controller
     }
 
     /**
+     * Many To Many Polymorphic Relations
+     */
+    public function manythrough()
+    {
+        $country = Country::find(1);
+        $posts = $country->posts;
+
+        echo 'Country#' . $country->name . '\'s posts:<br>';
+        foreach ($posts as $post) {
+            echo '&lt;&lt;' . $post->title . '&gt;&gt;<br>';
+        }
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
