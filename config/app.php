@@ -155,6 +155,11 @@ return [
          */
         App\Providers\TestServiceProvider::class,
 
+        /*
+         * new packages
+         */
+        Huang\Contact\ContactServiceprovider::class,
+
     ],
 
     /*
