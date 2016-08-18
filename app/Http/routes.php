@@ -169,6 +169,14 @@ Route::get('eloquent/polymorphicpost', 'UserController@polymorphicpost');
 
 Route::get('eloquent/polymorphictag', 'UserController@polymorphictag');
 
+//console
+Route::get('testartisan', function () {
+	$exitCode = Artisan::call('laravel:academy', [
+		'name' => 'Laravel',
+		'--mark' => '123',
+	]);
+});
+
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes

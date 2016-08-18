@@ -37,13 +37,13 @@ class HelloLaravelAcademy extends Command
      */
     public function handle()
     {
-        // $name = $this->argument('name');
-        // $mark = $this->option('mark');
-        // $string = 'Hello ' . $name;
-        // if ($mark) {
-        //     $string .= $mark;
-        // }
-        // echo $string . "\n";
+        $name = $this->argument('name');
+        $mark = $this->option('mark');
+        $string = 'Hello ' . $name;
+        if ($mark) {
+            $string .= $mark;
+        }
+        echo $string . "\n";
         // $name = $this->ask('What do you want to say Hello?');
         // echo "Hello " . $name . "\n";
         // if ($this->confirm('Do you want to continue?[y|n]')) {
@@ -62,11 +62,11 @@ class HelloLaravelAcademy extends Command
         // $headers = ['Name', 'Email'];
         // $users = \App\Models\User::all(['name', 'email'])->toArray();
         // $this->table($headers, $users);
-        $this->output->progressStart(10);
-        for ($i = 0; $i < 10; $i++) { 
-            sleep(1);
-            $this->output->progressAdvance();
-        }
-        $this->output->progressFinish();
+        // $this->output->progressStart(10);
+        // for ($i = 0; $i < 10; $i++) { 
+        //     sleep(1);
+        //     $this->output->progressAdvance();
+        // }
+        // $this->output->progressFinish();
     }
 }
