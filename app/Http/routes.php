@@ -164,6 +164,9 @@ Route::get('eloquent/manytomany', 'UserController@manytomany');
 Route::get('eloquent/createcountries', 'UserController@createcountries');
 Route::get('eloquent/manythrough', 'UserController@manythrough');
 
+Route::get('eloquent/polymorphicvideo', 'UserController@polymorphicvideo');
+Route::get('eloquent/polymorphicpost', 'UserController@polymorphicpost');
+
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes

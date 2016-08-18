@@ -11,6 +11,7 @@ use App\Models\UserAccount;
 use App\Models\Post;
 use App\Models\Role;
 use App\Models\Country;
+use App\Models\Video;
 
 class UserController extends Controller
 {
@@ -103,6 +104,26 @@ class UserController extends Controller
         foreach ($posts as $post) {
             echo '&lt;&lt;' . $post->title . '&gt;&gt;<br>';
         }
+    }
+
+    /**
+     * Polymorphic relations video
+     */
+    public function polymorphicvideo()
+    {
+        $video = Video::find(5);
+        $videoComments = $video->comments;
+        dd($videoComments);
+    }
+
+    /**
+     * Polymorphic relations post
+     */
+    public function polymorphicpost()
+    {
+        $post = Post::find(1);
+        $postComments = $post->comments;
+        dd($postComments);
     }
 
     /**

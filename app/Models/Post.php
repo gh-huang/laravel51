@@ -36,4 +36,9 @@ class Post extends Model
         return $this->belongsTo('App\Models\User', 'user_id', 'id');
     }
 
+    //Polymorphic relations
+    public function comments()
+    {
+        return $this->morphMany('App\Models\Comment', 'item');
+    }
 }

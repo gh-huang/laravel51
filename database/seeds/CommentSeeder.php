@@ -11,7 +11,7 @@ class CommentSeeder extends Seeder
      */
     public function run()
     {
-    	$type = ['App\Modles\Post', 'App\Models\Video'];
+    	$type = ['App\Models\Post', 'App\Models\Video'];
         for ($i=1; $i < 11; $i++) {
         	$key = array_rand($type); 
         	\App\Models\Comment::create([
