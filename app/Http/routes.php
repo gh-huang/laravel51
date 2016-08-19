@@ -19,7 +19,7 @@ Route::get('phpinfo', function () {
 	phpinfo();
 });
 
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'auth', 'as' => 'admin'], function () {
 	Route::get('admin', 'HomeController@index');
 });
 
