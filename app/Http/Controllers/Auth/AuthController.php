@@ -7,6 +7,7 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Support\Facades\Auth;
 use Socialite;
 
 class AuthController extends Controller
@@ -78,16 +79,16 @@ class AuthController extends Controller
     public function handleProviderCallback()
     {
         $user = Socialite::driver('github')->user();
-        dd($user);
-        // if (!User::where('github_id', $user->id)->first()) {
-        //     $userModel = new User;
-        //     $userModel->github_id = $user->id;
-        //     $userModel->email = $user->email;
-        //     $userModel->name = $user->name;
-        //     $userModel->avatar = $user->avatar;
-        //     $userModel->save();
-        // }
-        // $userInstance = User::where('github_id', $user->id)->firstOrFail();
-        // Auth::login($userInstance);
+        // dd($user);
+        if (!User::where('github_id', $user->id)->first()) {
+            $userModel = new User;
+            $userModel->github_id = $user->id;
+            $userModel->email = $user->email;
+            $userModel->name = $user->name;
+            $userModel->avatar = $user->avatar;
+            $userModel->save();
+        }
+        $userInstance = User::where('github_id', $user->id)->firstOrFail();
+        Auth::login($userInstance);
     }
 }
