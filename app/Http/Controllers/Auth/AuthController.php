@@ -90,5 +90,6 @@ class AuthController extends Controller
         }
         $userInstance = User::where('github_id', $user->id)->firstOrFail();
         Auth::login($userInstance);
+        return redirect()->route('admin');
     }
 }
