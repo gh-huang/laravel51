@@ -140,8 +140,8 @@ Route::get('qb/update', 'QbController@update');
 Route::get('qb/delete', 'QbController@delete');
 
 //learn Eloquent ORM
-Route::get('eloquent', 'PostController@index');
-Route::get('eloquent/create', 'PostController@create');
+Route::get('eloquent', 'PostController@eloquent');
+Route::get('eloquent/create', 'PostController@eloquentcreate');
 Route::get('eloquent/save', 'PostController@savedata');
 Route::get('eloquent/createdata', 'PostController@createdata');
 Route::get('eloquent/updatedata', 'PostController@updatedata');
@@ -176,6 +176,9 @@ Route::get('testartisan', function () {
 		'--mark' => '123',
 	]);
 });
+
+//RESTFul
+Route::resource('post', 'PostController');
 
 // auth route
 Route::group(['namespace' => 'auth'], function () {
