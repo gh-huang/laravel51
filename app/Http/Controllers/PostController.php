@@ -221,10 +221,10 @@ class PostController extends Controller
         $html = '<ul>';
 
         foreach ($posts as $post) {
-            $html .= '<li><a href='.route('post.show',['post'=>$post]).'>'.$post->title.'</li>';
+            $html .= '<li><a href='.route('post.show',['post'=>$post]).'>'.$post->title.' <a href=' . route('post.destroy', ['post' => $post]) .'>删除</a></li>';
         }
 
-        $html .= '</ul>';
+        $html .= '</ul><hr><a href=' . route('post.create') .'>new post</a>';
 
         return $html;
     }

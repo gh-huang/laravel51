@@ -5,3 +5,4 @@ Homestead.json
 .env
 .env.example
 /public/images
+/node_modules

@@ -1,0 +1,1 @@
+{"version":3,"sources":["test.coffee"],"names":[],"mappings":"AAAA;EAAA,KAAA,CAAM,qBAAN;AAAA","file":"test.js","sourcesContent":["alert \"Hi I am Hello World\""],"sourceRoot":"/source/"}

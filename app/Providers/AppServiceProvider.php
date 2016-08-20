@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use DB;
+use Cache;
 use App\Models\Post;
 
 class AppServiceProvider extends ServiceProvider
@@ -47,8 +48,25 @@ class AppServiceProvider extends ServiceProvider
             echo "created event is fired <br>";
         });
 
-        Post::saved(function () {
-            echo "saved event is fired <br>";
+        Post::saved(function ($post) {
+            $cacheKey = 'post_' . $post->id;
+            $cacheData = Cache::get($cacheKey);
+            if (!$cacheData) {
+                Cache::add($cacheKey, $post, 60*24*7);
+            } else {
+                Cache::put($cacheKey, $post, 60*24*7);
+            }
+        });
+
+        Post::deleted(function ($post) {
+            $cacheKey = 'post_' . $post->id;
+            $cacheData = Cache::get($cacheKey);
+            if ($cacheData) {
+                Cache::forget($cacheData);
+            }
+            if (Cache::get('post_views_' . $post->id)) {
+                Cache::forget('post_views_' . $post->id);
+            }
         });
     }
 
