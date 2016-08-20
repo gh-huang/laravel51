@@ -214,19 +214,19 @@ class PostController extends Controller
      */
     public function index()
     {
-            $posts = Cache::get('posts',[]);
-    if(!$posts)
-        exit('Nothing');
+        $posts = Post::all();
+        if(!$posts)
+            exit('Nothing');
 
-    $html = '<ul>';
+        $html = '<ul>';
 
-    foreach ($posts as $key=>$post) {
-        $html .= '<li><a href='.route('post.show',['post'=>$key]).'>'.$post['title'].'</li>';
-    }
+        foreach ($posts as $post) {
+            $html .= '<li><a href='.route('post.show',['post'=>$post]).'>'.$post->title.'</li>';
+        }
 
-    $html .= '</ul>';
+        $html .= '</ul>';
 
-    return $html;
+        return $html;
     }
 
     /**
@@ -241,8 +241,8 @@ class PostController extends Controller
         $html = <<<CREATE
             <form action="$postUrl" method="POST">
                 $csrf_field
-                <input type="text" name="title"><br/><br/>
-                <textarea name="content" cols="50" rows="5"></textarea><br/><br/>
+                Title<input type="text" name="title"><br/><br/>
+                Content<textarea name="content" cols="50" rows="5"></textarea><br/><br/>
                 <input type="submit" value="提交"/>
             </form>
 CREATE;
@@ -259,19 +259,12 @@ CREATE;
     {
         $title = $request->input('title');
         $content = $request->input('content');
-        $post = ['title'=>trim($title),'content'=>trim($content)];
 
-        $posts = Cache::get('posts',[]);
-        
-        if(!Cache::get('post_id')){
-            Cache::add('post_id',1,60);
-        }else{
-            Cache::increment('post_id',1); 
-        }
-        $posts[Cache::get('post_id')] = $post;
-
-        Cache::put('posts',$posts,60);
-        return redirect()->route('post.show',['post'=>Cache::get('post_id')]);
+        $post = new Post;
+        $post->title = $title;
+        $post->content = $content;
+        $post->save();
+        return redirect()->route('post.show',['post' => $post]);
     }
 
     /**
@@ -282,17 +275,29 @@ CREATE;
      */
     public function show($id)
     {
-        $posts = Cache::get('posts',[]);
-    if(!$posts || !$posts[$id])
-        exit('Nothing Found！');
-    $post = $posts[$id];
+        $post = Cache::get('post_' . $id);
+        if (!$post) {
+            $post = Post::find($id);
+            if (!$post) {
+                exit('not post');
+            } else {
+                Cache::put('post_' . $id, $post, 60*24*7);
+            }
+        }
+        if (!Cache::get('post_views_' . $id)) {
+            Cache::forever('post_views_' . $id, 0);
+        }
+        $views = Cache::increment('post_views_' . $id);
+        Cache::forever('post_views_' . $id, $views);
 
-    $editUrl = route('post.edit',['post'=>$id]);
+        $editUrl = route('post.edit', ['post' => $post]);
+        $deleteUrl = route('post.destroy', ['post' => $post]);
     $html = <<<DETAIL
-        <h3>{$post['title']}</h3>
-        <p>{$post['content']}</p>
+        <h3>{$post->title}</h3>
+        <p>{$post->content}</p>
         <p>
             <a href="{$editUrl}">编辑</a>
+            <a href="{$deleteUrl}">删除</a>
         </p>
 DETAIL;
 
@@ -307,19 +312,19 @@ DETAIL;
      */
     public function edit($id)
     {
-        $posts = Cache::get('posts',[]);
-    if(!$posts || !$posts[$id])
-        exit('Nothing Found！');
-    $post = $posts[$id];
+        $post = Post::find($id);
+        if (!$post) {
+            exit('not post');
+        }
 
-    $postUrl = route('post.update',['post'=>$id]);
+    $postUrl = route('post.update', ['post' => $post]);
     $csrf_field = csrf_field();
     $html = <<<UPDATE
         <form action="$postUrl" method="POST">
             $csrf_field
             <input type="hidden" name="_method" value="PUT"/>
-            <input type="text" name="title" value="{$post['title']}"><br/><br/>
-            <textarea name="content" cols="50" rows="5">{$post['content']}</textarea><br/><br/>
+            <input type="text" name="title" value="{$post->title}"><br/><br/>
+            <textarea name="content" cols="50" rows="5">{$post->content}</textarea><br/><br/>
             <input type="submit" value="提交"/>
         </form>
 UPDATE;
@@ -335,18 +340,18 @@ UPDATE;
      */
     public function update(Request $request, $id)
     {
-        $posts = Cache::get('posts',[]);
-    if(!$posts || !$posts[$id])
-        exit('Nothing Found！');
+        $post = Post::find($id);
+        if (!$post) {
+            exit('Nothing Found！');
+        }
 
-    $title = $request->input('title');
-    $content = $request->input('content');
+        $title = $request->input('title');
+        $content = $request->input('content');
 
-    $posts[$id]['title'] = trim($title);
-    $posts[$id]['content'] = trim($content);
-
-    Cache::put('posts',$posts,60);
-    return redirect()->route('post.show',['post'=>Cache::get('post_id')]);
+        $post->title = $title;
+        $post->content = $content;
+        $post->save();
+        return redirect()->route('post.show',['post' => $post]);
     }
 
     /**
@@ -357,13 +362,15 @@ UPDATE;
      */
     public function destroy($id)
     {
-        $posts = Cache::get('posts',[]);
-    if(!$posts || !$posts[$id])
-        exit('Nothing Deleted！');
+        $post = Post::find($id);
+        if (!$post) {
+            exit('Nothing Found！');
+        }
 
-    unset($posts[$id]);
-    Cache::decrement('post_id',1);
-
-    return redirect()->route('post.index');
+        if ($post->delete()) {
+            return redirect()->route('post.index');
+        } else {
+            exit('delete false');
+        }
     }
 }
