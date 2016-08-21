@@ -180,6 +180,12 @@ Route::get('testartisan', function () {
 //RESTFul
 Route::resource('post', 'PostController');
 
+//cache
+Route::get('cache', function () {
+	$post = Cache::get('post_1');
+	dd($post);
+});
+
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
