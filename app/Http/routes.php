@@ -192,6 +192,7 @@ Route::get('redisscard', 'RedisController@redisscard');
 
 //paginate
 Route::get('simplepaginate', 'PostController@simplepaginate');
+Route::get('eloquentpaginate', 'PostController@eloquentpaginate');
 
 // auth route
 Route::group(['namespace' => 'auth'], function () {

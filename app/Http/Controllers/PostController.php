@@ -213,7 +213,16 @@ class PostController extends Controller
      */
     public function simplepaginate()
     {
-        $posts = DB::table('posts')->simplepaginate(3);
+        $posts = DB::table('posts')->paginate(3);
+        return view('post/index', ['posts' => $posts]);
+    }
+
+    /**
+     * eloquentpaginate
+     */
+    public function eloquentpaginate()
+    {
+        $posts = Post::paginate(3);
         return view('post/index', ['posts' => $posts]);
     }
 
