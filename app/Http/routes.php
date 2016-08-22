@@ -186,6 +186,9 @@ Route::get('cache', function () {
 	dd($post);
 });
 
+//Redis
+Route::get('redisread', 'RedisController@redisread');
+
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
