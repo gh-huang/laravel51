@@ -9,6 +9,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Post;
 use Cache;
 use DB;
+use Event;
+use App\Events\PostSaved;
 
 class PostController extends Controller
 {
@@ -283,6 +285,7 @@ CREATE;
         $post->title = $title;
         $post->content = $content;
         $post->save();
+        Event::fire(new PostSaved($post));
         return redirect()->route('post.show',['post' => $post]);
     }
 
@@ -370,6 +373,7 @@ UPDATE;
         $post->title = $title;
         $post->content = $content;
         $post->save();
+        Event::fire(new PostSaved($post));
         return redirect()->route('post.show',['post' => $post]);
     }
 
