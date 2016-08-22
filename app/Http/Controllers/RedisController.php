@@ -27,4 +27,19 @@ class RedisController extends Controller
         }
     }
 
+    public function redisscard()
+    {
+        $key = 'posts:title';
+        $posts = Post::all();
+        foreach ($posts as $post) {
+            LRedis::sadd($key, $post->title);
+        }
+
+        $nums = LRedis::scard($key);
+        if ($nums > 0) {
+            $post_titles = LRedis::srandmember($key, 3);
+            dd($post_titles);
+        }
+    }
+
 }

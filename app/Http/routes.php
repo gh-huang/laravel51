@@ -188,6 +188,7 @@ Route::get('cache', function () {
 
 //Redis
 Route::get('redisread', 'RedisController@redisread');
+Route::get('redisscard', 'RedisController@redisscard');
 
 // auth route
 Route::group(['namespace' => 'auth'], function () {
