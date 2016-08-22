@@ -194,6 +194,9 @@ Route::get('redisscard', 'RedisController@redisscard');
 Route::get('simplepaginate', 'PostController@simplepaginate');
 Route::get('eloquentpaginate', 'PostController@eloquentpaginate');
 
+//log
+Route::get('log', 'TestController@log');
+
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes

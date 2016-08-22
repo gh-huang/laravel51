@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 
 use App\Learnlaravel\Test\Contracts\TestContract;
 use TestClass;
+use Log;
 
 class TestController extends Controller
 {
@@ -30,69 +31,18 @@ class TestController extends Controller
         TestClass::doSomething();
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function log()
     {
-        //
-    }
+        Log::emergency('系统挂掉了');
+        Log::alert('数据库访问异常');
+        Log::critical('系统出现未知错误');
+        Log::error('指定变量不存在');
+        Log::warning('该方法已经废弃');
+        Log::notice('用户异地登录');
+        Log::info('用户XXX登录成功');
+        Log::debug('调试信息');
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        $monolog = Log::getMonolog();
+        dd($monolog);
     }
 }
