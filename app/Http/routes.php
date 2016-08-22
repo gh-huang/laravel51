@@ -197,6 +197,12 @@ Route::get('eloquentpaginate', 'PostController@eloquentpaginate');
 //log
 Route::get('log', 'TestController@log');
 
+//local
+Route::get('{local}', function ($local) {
+	App::setLocale($local);
+	return view('local');
+});
+
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
