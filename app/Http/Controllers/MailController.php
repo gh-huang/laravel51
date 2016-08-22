@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Mail;
+use App\Jobs\SendReminderEmail;
 
 class MailController extends Controller
 {
@@ -47,5 +48,11 @@ class MailController extends Controller
     	} else {
     		echo "false";
     	}
+    }
+
+    public function sendReminderEmail(Request $request, $id)
+    {
+        $user = \App\Models\User::findOrFail($id);
+        $this->dispatch(new SendReminderEmail($user));
     }
 }

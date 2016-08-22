@@ -198,7 +198,7 @@ Route::get('eloquentpaginate', 'PostController@eloquentpaginate');
 Route::get('log', 'TestController@log');
 
 //local
-Route::get('{local}', function ($local) {
+Route::get('/lang/{local}', function ($local) {
 	App::setLocale($local);
 	return view('local');
 });
@@ -207,6 +207,9 @@ Route::get('{local}', function ($local) {
 Route::get('mail/send', 'MailController@send');
 Route::get('mail/sendstring', 'MailController@sendstring');
 Route::get('mail/attach', 'MailController@attach');
+
+//queue
+Route::get('mail/sendReminderEmail/{id}', 'MailController@sendReminderEmail');
 
 // auth route
 Route::group(['namespace' => 'auth'], function () {
