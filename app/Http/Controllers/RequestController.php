@@ -7,6 +7,7 @@ use Illuminate\Http\Response;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Storage;
 
 class RequestController extends Controller
 {
@@ -105,14 +106,37 @@ CREATE;
         if (!$file->isValid()) {
             exit('error upload file');
         }
-        $destPath = public_path('images');
-        if (!realpath($destPath)) {
-            mkdir($destPath,0755,true);
+        $newFileName = md5(time().rand(0,10000)).'.'.$file->getClientOriginalExtension();
+        $savePath = 'test/' . $newFileName;
+        $bytes = Storage::put($savePath, file_get_contents($file->getRealPath()));
+        if (!Storage::exists($savePath)) {
+            exit('save error');
         }
-        $filename = $file->getClientOriginalName();
-        if (!$file->move($destPath, $filename)) {
-            exit('error save file');
-        }
-        exit('success upload file');
+        Storage::prepend($savePath, 'prepend  ');
+        Storage::append($savePath, 'append  ');
+        header("Content-Type: ".Storage::mimeType($savePath));
+        echo Storage::get($savePath);
+        // $destPath = public_path('images');
+        // if (!realpath($destPath)) {
+        //     mkdir($destPath,0755,true);
+        // }
+        // $filename = $file->getClientOriginalName();
+        // if (!$file->move($destPath, $filename)) {
+        //     exit('error save file');
+        // }
+        // exit('success upload file');
+    }
+
+    public function getFile()
+    {
+        // $dirPath = 'files';
+        // if (Storage::deleteDirectory($dirPath)) {
+        //     echo "success";
+        // } else {
+        //     echo "false";
+        // }
+        $filePath = 'test';
+        $files = Storage::Files($filePath);
+        dd($files);
     }
 }
