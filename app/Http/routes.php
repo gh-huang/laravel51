@@ -211,6 +211,9 @@ Route::get('mail/attach', 'MailController@attach');
 //queue
 Route::get('mail/sendReminderEmail/{id}', 'MailController@sendReminderEmail');
 
+//session
+Route::get('session', 'SessionController@session');
+
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
