@@ -190,6 +190,9 @@ Route::get('cache', function () {
 Route::get('redisread', 'RedisController@redisread');
 Route::get('redisscard', 'RedisController@redisscard');
 
+//paginate
+Route::get('simplepaginate', 'PostController@simplepaginate');
+
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes

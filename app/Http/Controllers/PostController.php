@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Post;
 use Cache;
+use DB;
 
 class PostController extends Controller
 {
@@ -205,6 +206,15 @@ class PostController extends Controller
         } else {
             echo '&lt;' . $post->title . '&gt;create success';
         }
+    }
+
+    /**
+     * simplepaginate
+     */
+    public function simplepaginate()
+    {
+        $posts = DB::table('posts')->simplepaginate(3);
+        return view('post/index', ['posts' => $posts]);
     }
 
     /**
