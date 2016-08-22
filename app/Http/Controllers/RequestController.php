@@ -114,6 +114,7 @@ CREATE;
         }
         Storage::prepend($savePath, 'prepend  ');
         Storage::append($savePath, 'append  ');
+        // Storage::move($savePath, 'files/test.txt');
         header("Content-Type: ".Storage::mimeType($savePath));
         echo Storage::get($savePath);
         // $destPath = public_path('images');

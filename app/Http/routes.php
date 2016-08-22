@@ -203,6 +203,11 @@ Route::get('{local}', function ($local) {
 	return view('local');
 });
 
+//mail
+Route::get('mail/send', 'MailController@send');
+Route::get('mail/sendstring', 'MailController@sendstring');
+Route::get('mail/attach', 'MailController@attach');
+
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
