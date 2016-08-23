@@ -214,6 +214,9 @@ Route::get('mail/sendReminderEmail/{id}', 'MailController@sendReminderEmail');
 //session
 Route::get('session', 'SessionController@session');
 
+//phpunit
+Route::get('user', 'UserController@testjson');
+
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes

@@ -208,4 +208,13 @@ class UserController extends Controller
     {
         //
     }
+
+    /**
+     * return json
+     */
+    public function testjson()
+    {
+        $users = User::all();
+        return json_encode($users);
+    }
 }
