@@ -10,6 +10,7 @@ use App\Models\Role;
 use App\Models\User;
 use App\Models\Permission;
 use DB;
+use Entrust;
 
 class ZizacoController extends Controller
 {
@@ -51,5 +52,15 @@ class ZizacoController extends Controller
 			$owner->attachPermissions(array($createPost, $editUser));
 			// equivalent to $owner->perms()->sync(array($createPost->id, $editUser->id));
 		});
+    }
+
+    public function check()
+    {
+    	$user = User::find(1);
+    	// var_dump($user->hasRole('owner'));
+    	// var_dump($user->hasRole('admin'));
+    	// var_dump($user->zizacocan('edit-user'));
+    	// var_dump($user->zizacocan('create-post'));
+    	var_dump(Entrust::hasRole('admin'));
     }
 }

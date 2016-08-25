@@ -162,6 +162,7 @@ return [
         Huang\Contact\ContactServiceprovider::class,
 
         Zizaco\Entrust\EntrustServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
 
     ],
 
@@ -214,6 +215,7 @@ return [
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'TestClass' => App\Learnlaravel\Test\Facades\TestClass::class,
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
+        'Debugbar'  => Barryvdh\Debugbar\Facade::class,
     ],
 
 ];
