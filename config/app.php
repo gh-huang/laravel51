@@ -161,6 +161,8 @@ return [
          */
         Huang\Contact\ContactServiceprovider::class,
 
+        Zizaco\Entrust\EntrustServiceProvider::class,
+
     ],
 
     /*
@@ -211,6 +213,7 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'TestClass' => App\Learnlaravel\Test\Facades\TestClass::class,
+        'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
     ],
 
 ];

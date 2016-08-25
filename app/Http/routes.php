@@ -217,6 +217,9 @@ Route::get('session', 'SessionController@session');
 //phpunit
 Route::get('user', 'UserController@testjson');
 
+//RBAC Zizaco/Entrust
+Route::get('zizaco', 'ZizacoController@index');
+
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
