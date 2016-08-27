@@ -163,6 +163,7 @@ return [
 
         Zizaco\Entrust\EntrustServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
+        Mews\Captcha\CaptchaServiceProvider::class,
 
     ],
 
@@ -216,6 +217,7 @@ return [
         'TestClass' => App\Learnlaravel\Test\Facades\TestClass::class,
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
         'Debugbar'  => Barryvdh\Debugbar\Facade::class,
+        'Captcha'   => Mews\Captcha\Facades\Captcha::class,
     ],
 
 ];
