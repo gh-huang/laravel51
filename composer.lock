@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "320d2cf7e5a7f13ef4f7dd33625d615f",
-    "content-hash": "c471a1a6861b4cae4fa65377a0291095",
+    "hash": "cc9d86b1d2cab411e7752a803766f303",
+    "content-hash": "b7e7ee3d9c7b806f2a79a349e0bd9f46",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -60,6 +60,47 @@
                 "webprofiler"
             ],
             "time": "2016-07-29 15:00:36"
+        },
+        {
+            "name": "ckeditor/ckeditor",
+            "version": "4.5.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ckeditor/ckeditor-releases.git",
+                "reference": "b889d7d3071a7a9d691e2e89170c745159f9f8c9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ckeditor/ckeditor-releases/zipball/b889d7d3071a7a9d691e2e89170c745159f9f8c9",
+                "reference": "b889d7d3071a7a9d691e2e89170c745159f9f8c9",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+",
+                "LGPL-2.1+",
+                "MPL-1.1+"
+            ],
+            "authors": [
+                {
+                    "name": "CKSource",
+                    "homepage": "http://cksource.com"
+                }
+            ],
+            "description": "JavaScript WYSIWYG web text editor.",
+            "homepage": "http://ckeditor.com",
+            "keywords": [
+                "CKEditor",
+                "editor",
+                "fckeditor",
+                "html",
+                "javascript",
+                "richtext",
+                "text",
+                "wysiwyg"
+            ],
+            "time": "2016-07-13 13:57:11"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -1669,6 +1710,59 @@
                 "shell"
             ],
             "time": "2016-03-09 05:03:14"
+        },
+        {
+            "name": "summerblue/administrator",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/summerblue/administrator.git",
+                "reference": "7e8283b4533c785dfdc21b817ccea0ab52cc3568"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/summerblue/administrator/zipball/7e8283b4533c785dfdc21b817ccea0ab52cc3568",
+                "reference": "7e8283b4533c785dfdc21b817ccea0ab52cc3568",
+                "shasum": ""
+            },
+            "require": {
+                "ckeditor/ckeditor": "4.*",
+                "laravel/framework": "5.*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/controllers"
+                ],
+                "psr-0": {
+                    "Frozennode\\Administrator": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Original: Jan Hartigan, modified by CJ",
+                    "email": "cj@estgroupe.com"
+                }
+            ],
+            "description": "A database interface package for Laravel, modified!",
+            "homepage": "https://github.com/summerblue/administrator",
+            "keywords": [
+                "admin",
+                "administrator",
+                "cms",
+                "database",
+                "laravel",
+                "laravel-administrator"
+            ],
+            "time": "2016-07-23 15:33:54"
         },
         {
             "name": "swiftmailer/swiftmailer",

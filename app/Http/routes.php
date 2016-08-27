@@ -11,6 +11,10 @@
 |
 */
 
+// Route::get('/tests', function () {
+	
+// });
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -19,9 +23,9 @@ Route::get('phpinfo', function () {
 	phpinfo();
 });
 
-Route::group(['middleware' => 'auth', 'as' => 'admin'], function () {
-	Route::get('admin', 'HomeController@index');
-});
+// Route::group(['middleware' => 'auth', 'as' => 'admin'], function () {
+// 	Route::get('admin', 'HomeController@index');
+// });
 
 Route::get('/hello/{id}', function ($id) {
 	echo 'hello ' . $id;

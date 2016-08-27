@@ -164,6 +164,7 @@ return [
         Zizaco\Entrust\EntrustServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         Mews\Captcha\CaptchaServiceProvider::class,
+        Frozennode\Administrator\AdministratorServiceProvider::class,
 
     ],
 

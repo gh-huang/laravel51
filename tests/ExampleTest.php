@@ -29,6 +29,7 @@ class ExampleTest extends TestCase
         // $this->actingAs($user)
         // 	 ->visit('/admin')
         // 	 ->see('Welcome');
-        $this->seeInDatabase('users', ['email' => 'hgh110720@163.com']);
+        // $this->seeInDatabase('users', ['email' => 'hgh110720@163.com']);
+        $this->visit('admins');
     }
 }
