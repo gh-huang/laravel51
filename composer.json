@@ -14,7 +14,8 @@
         "mews/captcha": "^2.1",
         "summerblue/administrator": "^1.0",
         "barryvdh/laravel-ide-helper": "^2.2",
-        "anahkiasen/former": "^4.0"
+        "anahkiasen/former": "^4.0",
+        "jenssegers/agent": "^2.3"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
