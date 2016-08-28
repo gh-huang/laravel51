@@ -166,6 +166,7 @@ return [
         Mews\Captcha\CaptchaServiceProvider::class,
         Frozennode\Administrator\AdministratorServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        Former\FormerServiceProvider::class,
 
     ],
 
