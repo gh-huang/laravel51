@@ -221,6 +221,7 @@ return [
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
         'Debugbar'  => Barryvdh\Debugbar\Facade::class,
         'Captcha'   => Mews\Captcha\Facades\Captcha::class,
+        'Former'    => Former\Facades\Former::class,
     ],
 
 ];
