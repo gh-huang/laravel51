@@ -254,6 +254,17 @@ Route::get('former', function () {
 	return view('former');
 });
 
+Route::get('agent', function () {
+	$browser = Agent::browser();
+	$bversion = Agent::version($browser);
+	$platform = Agent::platform();
+	$pversion = Agent::version($platform);
+	echo $browser . '<hr>';
+	echo $bversion . '<hr>';
+	echo $platform . '<hr>';
+	echo $pversion . '<hr>';
+});
+
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
