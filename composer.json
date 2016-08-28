@@ -12,7 +12,8 @@
         "zizaco/entrust": "5.2.x-dev",
         "barryvdh/laravel-debugbar": "^2.2",
         "mews/captcha": "^2.1",
-        "summerblue/administrator": "^1.0"
+        "summerblue/administrator": "^1.0",
+        "barryvdh/laravel-ide-helper": "^2.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
