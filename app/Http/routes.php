@@ -250,6 +250,10 @@ Route::any('captcha', function() {
     return $form;
 });
 
+Route::get('former', function () {
+	return view('former');
+});
+
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
