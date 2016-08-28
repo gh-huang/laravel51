@@ -167,7 +167,7 @@ return [
         Frozennode\Administrator\AdministratorServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Former\FormerServiceProvider::class,
-
+        Jenssegers\Agent\AgentServiceProvider::class,
     ],
 
     /*
@@ -222,6 +222,7 @@ return [
         'Debugbar'  => Barryvdh\Debugbar\Facade::class,
         'Captcha'   => Mews\Captcha\Facades\Captcha::class,
         'Former'    => Former\Facades\Former::class,
+        'Agent'     => Jenssegers\Agent\Facades\Agent::class,
     ],
 
 ];
