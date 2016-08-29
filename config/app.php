@@ -168,6 +168,7 @@ return [
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Former\FormerServiceProvider::class,
         Jenssegers\Agent\AgentServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
     ],
 
     /*
