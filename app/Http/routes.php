@@ -265,6 +265,12 @@ Route::get('agent', function () {
 	echo $pversion . '<hr>';
 });
 
+//image
+Route::get('image', function () {
+	$img = Image::make('images/IMG_1501.JPG')->resize(200,200);
+	return $img->response('jpg');
+});
+
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
