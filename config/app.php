@@ -224,6 +224,7 @@ return [
         'Captcha'   => Mews\Captcha\Facades\Captcha::class,
         'Former'    => Former\Facades\Former::class,
         'Agent'     => Jenssegers\Agent\Facades\Agent::class,
+        'Image' => Intervention\Image\Facades\Image::class,
     ],
 
 ];
