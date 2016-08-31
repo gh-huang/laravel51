@@ -267,9 +267,11 @@ Route::get('agent', function () {
 
 //image
 Route::get('image', function () {
-	$img = Image::make('images/IMG_1501.JPG')->resize(200,200);
+	$img = Image::make('images/IMG_1501.JPG')->resize(200,200)->gamma(1.6);
 	return $img->response('jpg');
 });
+
+Route::
 
 // auth route
 Route::group(['namespace' => 'auth'], function () {
