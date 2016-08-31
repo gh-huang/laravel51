@@ -271,7 +271,7 @@ Route::get('image', function () {
 	return $img->response('jpg');
 });
 
-Route::
+Route::get()
 
 // auth route
 Route::group(['namespace' => 'auth'], function () {
