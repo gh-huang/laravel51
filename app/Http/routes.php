@@ -271,7 +271,9 @@ Route::get('image', function () {
 	return $img->response('jpg');
 });
 
-Route::get('git', function)
+Route::get('git', function () {
+	
+})
 
 // auth route
 Route::group(['namespace' => 'auth'], function () {
