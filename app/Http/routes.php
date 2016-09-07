@@ -275,7 +275,7 @@ Route::get('git', function () {
 	echo "test";
 });
 
-Route:
+Route::get()
 
 // auth route
 Route::group(['namespace' => 'auth'], function () {
