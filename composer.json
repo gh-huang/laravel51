@@ -16,7 +16,8 @@
         "barryvdh/laravel-ide-helper": "^2.2",
         "anahkiasen/former": "^4.0",
         "jenssegers/agent": "^2.3",
-        "intervention/image": "^2.3"
+        "intervention/image": "^2.3",
+        "zionon/multiauth": "1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
