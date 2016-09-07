@@ -276,8 +276,8 @@ Route::get('git', function () {
 });
 
 Route::get('info', function () {
-	
-})
+	phpinfo();
+});
 
 // auth route
 Route::group(['namespace' => 'auth'], function () {
