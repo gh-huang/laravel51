@@ -279,6 +279,8 @@ Route::get('info', function () {
 	phpinfo();
 });
 
+Route::
+
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
