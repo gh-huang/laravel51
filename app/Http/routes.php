@@ -280,7 +280,7 @@ Route::get('info', function () {
 });
 
 Route::get('test', function () {
-	echo 
+	echo 'test';
 })
 
 // auth route
