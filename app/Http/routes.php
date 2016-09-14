@@ -288,7 +288,7 @@ Route::post('post', function () {
 });
 
 Route::delete('user', function () {
-
+	print_r('down');
 });
 
 // auth route
