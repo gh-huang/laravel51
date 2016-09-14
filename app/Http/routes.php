@@ -283,7 +283,9 @@ Route::get('test', function () {
 	echo 'test';
 });
 
-Route::post()
+Route::post('post', function () {
+
+});
 
 // auth route
 Route::group(['namespace' => 'auth'], function () {
