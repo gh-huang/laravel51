@@ -287,6 +287,8 @@ Route::post('post', function () {
 	echo 'hello world';
 });
 
+Route::delete('')
+
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
