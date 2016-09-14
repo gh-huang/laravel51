@@ -279,7 +279,7 @@ Route::get('info', function () {
 	phpinfo();
 });
 
-Route::
+Route::get('')
 
 // auth route
 Route::group(['namespace' => 'auth'], function () {
