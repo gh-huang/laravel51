@@ -281,7 +281,7 @@ Route::get('info', function () {
 
 Route::get('test', function () {
 	echo 'test';
-})
+});
 
 // auth route
 Route::group(['namespace' => 'auth'], function () {
