@@ -284,7 +284,7 @@ Route::get('test', function () {
 });
 
 Route::post('post', function () {
-
+	echo 'hello world';
 });
 
 // auth route
