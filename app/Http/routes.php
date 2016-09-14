@@ -283,6 +283,8 @@ Route::get('test', function () {
 	echo 'test';
 });
 
+Route::post()
+
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
