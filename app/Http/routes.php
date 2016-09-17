@@ -291,6 +291,9 @@ Route::delete('user', function () {
 	print_r('down');
 });
 
+Route::get('happy', function () {
+	echo 'happy';	
+});
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
