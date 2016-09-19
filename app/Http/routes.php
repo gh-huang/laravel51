@@ -295,7 +295,7 @@ Route::get('happy', function () {
 	echo 'happy';	
 });
 
-Route::get()
+Route::get('bad')
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
