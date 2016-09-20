@@ -299,7 +299,7 @@ Route::get('bad', function () {
 	echo 'bad';
 });
 
-Route::post()
+Route::post('end')
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
