@@ -298,6 +298,8 @@ Route::get('happy', function () {
 Route::get('bad', function () {
 	echo 'bad';
 });
+
+Route
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
