@@ -300,8 +300,8 @@ Route::get('bad', function () {
 });
 
 Route::post('end', function () {
-	echo
-})
+	echo 'end';
+});
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
