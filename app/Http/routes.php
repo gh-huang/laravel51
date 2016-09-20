@@ -300,7 +300,7 @@ Route::get('bad', function () {
 });
 
 Route::post('end', function () {
-	
+	echo
 })
 // auth route
 Route::group(['namespace' => 'auth'], function () {
