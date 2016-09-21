@@ -304,7 +304,7 @@ Route::post('end', function () {
 });
 
 Route::get('false', function () {
-
+	echo "false";
 });
 // auth route
 Route::group(['namespace' => 'auth'], function () {
