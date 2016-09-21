@@ -303,7 +303,7 @@ Route::post('end', function () {
 	echo 'end';
 });
 
-Route::
+Route::get()
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
