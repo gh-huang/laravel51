@@ -308,7 +308,7 @@ Route::get('false', function () {
 });
 
 Route::get('loser', function () {
-
+	echo "loser";
 });
 // auth route
 Route::group(['namespace' => 'auth'], function () {
