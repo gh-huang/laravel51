@@ -309,6 +309,7 @@ Route::get('false', function () {
 
 Route::get('loser', function () {
 	echo "loser";
+	print_r('loser');
 });
 // auth route
 Route::group(['namespace' => 'auth'], function () {
