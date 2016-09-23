@@ -311,6 +311,8 @@ Route::get('loser', function () {
 	echo "loser";
 	print_r('loser');
 });
+
+Route
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
