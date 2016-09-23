@@ -314,6 +314,7 @@ Route::get('loser', function () {
 
 Route::get('lose', function () {
 	print_r('lose');
+	var_dump()
 });
 // auth route
 Route::group(['namespace' => 'auth'], function () {
