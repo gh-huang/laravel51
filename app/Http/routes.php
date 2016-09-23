@@ -313,7 +313,7 @@ Route::get('loser', function () {
 });
 
 Route::get('lose', function () {
-	print_r()
+	print_r('lose');
 });
 // auth route
 Route::group(['namespace' => 'auth'], function () {
