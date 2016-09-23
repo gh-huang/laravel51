@@ -312,7 +312,7 @@ Route::get('loser', function () {
 	print_r('loser');
 });
 
-Route::get('lose')
+Route::get('lose', function)
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
