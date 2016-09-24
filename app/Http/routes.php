@@ -318,7 +318,9 @@ Route::get('lose', function () {
 	var_dump($_ENV);
 });
 
-Route::get('static',)
+Route::get('static', function () {
+
+});
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
