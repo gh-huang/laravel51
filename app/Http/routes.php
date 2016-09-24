@@ -319,7 +319,7 @@ Route::get('lose', function () {
 });
 
 Route::get('static', function () {
-
+	var_dump()
 });
 // auth route
 Route::group(['namespace' => 'auth'], function () {
