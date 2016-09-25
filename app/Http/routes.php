@@ -322,7 +322,7 @@ Route::get('static', function () {
 	var_dump($_SERVER);
 });
 
-Route::get()
+Route::get('nothing')
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
