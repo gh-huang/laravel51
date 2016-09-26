@@ -328,6 +328,7 @@ Route::get('nothing', function () {
 
 Route::get('one', function () {
 	var_dump($_SESSION);
+	echo "one";
 });
 // auth route
 Route::group(['namespace' => 'auth'], function () {
