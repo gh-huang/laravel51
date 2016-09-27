@@ -330,6 +330,10 @@ Route::get('one', function () {
 	var_dump($_SESSION);
 	echo "one";
 });
+
+Route::get('two', function () {
+	echo "two";
+});
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
