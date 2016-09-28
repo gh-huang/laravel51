@@ -334,6 +334,8 @@ Route::get('one', function () {
 Route::get('two', function () {
 	echo "two";
 });
+
+Route
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
