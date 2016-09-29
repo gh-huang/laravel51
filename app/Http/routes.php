@@ -340,7 +340,7 @@ Route::get('three', function () {
 });
 
 Route::get('four', function () {
-
+	echo "";
 });
 // auth route
 Route::group(['namespace' => 'auth'], function () {
