@@ -342,7 +342,7 @@ Route::get('three', function () {
 Route::get('four', function () {
 	echo "four";
 	var_dump($_COOKIE);
-	print_r()
+	print_r($_ENV);
 });
 // auth route
 Route::group(['namespace' => 'auth'], function () {
