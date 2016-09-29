@@ -342,6 +342,7 @@ Route::get('three', function () {
 Route::get('four', function () {
 	echo "four";
 	var_dump($_COOKIE);
+	print_r()
 });
 // auth route
 Route::group(['namespace' => 'auth'], function () {
