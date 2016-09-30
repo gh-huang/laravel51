@@ -344,6 +344,10 @@ Route::get('four', function () {
 	var_dump($_COOKIE);
 	print_r($_ENV);
 });
+
+Route::get('five', function () {
+	echo "five";
+});
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
