@@ -355,7 +355,7 @@ Route::get('six', function () {
 });
 
 Route::get('seven', function () {
-
+	echo "seven";
 });
 // auth route
 Route::group(['namespace' => 'auth'], function () {
