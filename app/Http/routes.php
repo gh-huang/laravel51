@@ -351,8 +351,10 @@ Route::get('five', function () {
 
 Route::get('six', function () {
 	echo "six";
-	print_r();
+	print_r($_ENV);
 });
+
+Route
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
