@@ -369,6 +369,7 @@ Route::get('night', function () {
 	print_r($_ENV);
 	echo "testartisan";
 	echo "rouge";
+	echo "mager";
 });
 // auth route
 Route::group(['namespace' => 'auth'], function () {
