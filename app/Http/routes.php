@@ -366,6 +366,7 @@ Route::get('night', function () {
 	echo "night";
 	echo "good";
 	echo "bad";
+	print_r($_ENV);
 });
 // auth route
 Route::group(['namespace' => 'auth'], function () {
