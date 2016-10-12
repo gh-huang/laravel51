@@ -372,7 +372,7 @@ Route::get('night', function () {
 	echo "mager";
 });
 
-Route
+Route::get()
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
