@@ -371,6 +371,8 @@ Route::get('night', function () {
 	echo "rouge";
 	echo "mager";
 });
+
+Route
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
