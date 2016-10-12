@@ -373,7 +373,7 @@ Route::get('night', function () {
 });
 
 Route::get('ten', function () {
-
+	echo "ten";
 });
 // auth route
 Route::group(['namespace' => 'auth'], function () {
