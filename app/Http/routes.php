@@ -381,7 +381,7 @@ Route::get('eleven', function () {
 	echo "eleven";
 });
 
-Route::get()
+Route::get('wow')
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
