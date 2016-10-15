@@ -382,7 +382,7 @@ Route::get('eleven', function () {
 });
 
 Route::get('wow', function () {
-
+	echo
 });
 // auth route
 Route::group(['namespace' => 'auth'], function () {
