@@ -390,7 +390,7 @@ Route::get('begin', function () {
 });
 
 Route::get('go', function () {
-
+	echo
 });
 // auth route
 Route::group(['namespace' => 'auth'], function () {
