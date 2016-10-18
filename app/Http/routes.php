@@ -389,7 +389,9 @@ Route::get('begin', function () {
 	echo "begin";
 });
 
-Route::get('go')
+Route::get('go', function () {
+
+});
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
