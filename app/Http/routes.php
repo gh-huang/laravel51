@@ -388,6 +388,8 @@ Route::get('wow', function () {
 Route::get('begin', function () {
 	echo "begin";
 });
+
+Route
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
