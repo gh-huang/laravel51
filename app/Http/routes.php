@@ -396,6 +396,10 @@ Route::get('go', function () {
 Route::get('bad', function () {
 	echo "bad";
 });
+
+Route::get('dou', function () {
+	echo "dou";
+});
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
