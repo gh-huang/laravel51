@@ -400,6 +400,10 @@ Route::get('bad', function () {
 Route::get('dou', function () {
 	echo "dou";
 });
+
+Route::get('pou', function () {
+	echo "pou";
+});
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
