@@ -404,6 +404,8 @@ Route::get('dou', function () {
 Route::get('pou', function () {
 	echo "pou";
 });
+
+Route
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
