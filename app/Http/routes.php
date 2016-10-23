@@ -407,6 +407,7 @@ Route::get('pou', function () {
 
 Route::get('lin', function () {
 	echo "lin";
+	echo "dong";
 });
 // auth route
 Route::group(['namespace' => 'auth'], function () {
