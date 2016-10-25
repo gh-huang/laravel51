@@ -413,6 +413,10 @@ Route::get('lin', function () {
 Route::get('feng', function () {
 	echo "feng";
 });
+
+Route::get('wu', function () {
+	echo "wu";
+});
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
