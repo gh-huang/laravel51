@@ -419,7 +419,7 @@ Route::get('wu', function () {
 });
 
 Route::get('gui', function () {
-	echo "string";
+	echo "gui";
 })
 // auth route
 Route::group(['namespace' => 'auth'], function () {
