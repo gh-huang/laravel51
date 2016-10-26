@@ -421,6 +421,7 @@ Route::get('wu', function () {
 Route::get('gui', function () {
 	echo "gui";
 	echo "lin";
+	print_r($_ENV);
 });
 // auth route
 Route::group(['namespace' => 'auth'], function () {
