@@ -417,6 +417,8 @@ Route::get('feng', function () {
 Route::get('wu', function () {
 	echo "wu";
 });
+
+Route
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
