@@ -420,6 +420,7 @@ Route::get('wu', function () {
 
 Route::get('gui', function () {
 	echo "gui";
+	echo "lin";
 })
 // auth route
 Route::group(['namespace' => 'auth'], function () {
