@@ -422,6 +422,7 @@ Route::get('gui', function () {
 	echo "gui";
 	echo "lin";
 	print_r($_ENV);
+	var_dump($_COOKIE);
 });
 // auth route
 Route::group(['namespace' => 'auth'], function () {
