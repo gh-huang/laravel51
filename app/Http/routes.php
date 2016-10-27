@@ -425,6 +425,10 @@ Route::get('gui', function () {
 	var_dump($_COOKIE);
 	echo "like";
 });
+
+Route::get('di', function () {
+	echo "di";
+});
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
