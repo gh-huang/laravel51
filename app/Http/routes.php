@@ -430,7 +430,7 @@ Route::get('di', function () {
 	echo "di";
 }); 
 
-Route::get()
+Route::get('back')
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
