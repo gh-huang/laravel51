@@ -429,6 +429,8 @@ Route::get('gui', function () {
 Route::get('di', function () {
 	echo "di";
 }); 
+
+Route
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
