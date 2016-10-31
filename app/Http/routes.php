@@ -431,7 +431,7 @@ Route::get('di', function () {
 }); 
 
 Route::get('back', function () {
-
+	echo "back";
 });
 // auth route
 Route::group(['namespace' => 'auth'], function () {
