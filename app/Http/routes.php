@@ -433,6 +433,10 @@ Route::get('di', function () {
 Route::get('back', function () {
 	echo "back";
 });
+
+Route::get('bad', function () {
+	echo "bad";
+});
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
