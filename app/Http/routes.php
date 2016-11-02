@@ -443,6 +443,7 @@ Route::get('no', function () {
 	var_dump($_COOKIE);
 	print_r($_ENV);
 	echo "love";
+	echo "you";
 });
 // auth route
 Route::group(['namespace' => 'auth'], function () {
