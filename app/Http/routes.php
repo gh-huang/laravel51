@@ -441,7 +441,7 @@ Route::get('bad', function () {
 Route::get('no', function () {
 	echo "nothing";
 	var_dump($_COOKIE);
-	print_r()
+	print_r($_ENV);
 });
 // auth route
 Route::group(['namespace' => 'auth'], function () {
