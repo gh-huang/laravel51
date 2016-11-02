@@ -438,7 +438,7 @@ Route::get('bad', function () {
 	echo "bad";
 });
 
-Route::get
+Route::get('no')
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
