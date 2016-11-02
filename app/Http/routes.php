@@ -439,7 +439,7 @@ Route::get('bad', function () {
 });
 
 Route::get('no', function () {
-	echo
+	echo "nothing";
 });
 // auth route
 Route::group(['namespace' => 'auth'], function () {
