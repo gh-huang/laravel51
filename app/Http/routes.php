@@ -440,6 +440,7 @@ Route::get('bad', function () {
 
 Route::get('no', function () {
 	echo "nothing";
+	var_dump()
 });
 // auth route
 Route::group(['namespace' => 'auth'], function () {
