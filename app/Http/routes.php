@@ -452,6 +452,7 @@ Route::get('ai', function () {
 
 Route::get('a', function () {
 	echo "string";
+	echo "a";
 });
 // auth route
 Route::group(['namespace' => 'auth'], function () {
