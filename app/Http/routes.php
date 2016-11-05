@@ -450,7 +450,7 @@ Route::get('ai', function () {
 	echo "ai";
 });
 
-Route
+Route::get()
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
