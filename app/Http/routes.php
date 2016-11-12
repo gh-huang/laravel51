@@ -480,6 +480,7 @@ Route::get('g', function () {
 	print "g";
 	printf("g");
 	var_dump("g");
+	$g = "g";
 });
 // auth route
 Route::group(['namespace' => 'auth'], function () {
