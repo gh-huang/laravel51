@@ -475,7 +475,7 @@ Route::get('f', function () {
 	echo "f";
 });
 
-Route
+Route::get()
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
