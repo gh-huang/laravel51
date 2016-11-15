@@ -491,6 +491,7 @@ Route::get('i', function () {
 	echo "i";
 	print "i";
 	printf("i");
+	var_dump("i");
 });
 // auth route
 Route::group(['namespace' => 'auth'], function () {
