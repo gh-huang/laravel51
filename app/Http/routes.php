@@ -500,7 +500,7 @@ Route::get('j', function () {
 	print "j";
 	printf("j");
 	var_dump("j");
-	$j
+	$j = "j";
 });
 // auth route
 Route::group(['namespace' => 'auth'], function () {
