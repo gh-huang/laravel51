@@ -502,6 +502,10 @@ Route::get('j', function () {
 	var_dump("j");
 	$j = "j";
 });
+
+Route::get('k', function () {
+	echo "k";
+});
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
