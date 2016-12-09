@@ -578,6 +578,10 @@ Route::get('end', function () {
 Route::get('start', function () {
 	echo "start";
 });
+
+Route::get('1', function () {
+	echo "1";
+});
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
