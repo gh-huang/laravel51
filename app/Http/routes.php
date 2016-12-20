@@ -598,6 +598,10 @@ Route::get('4', function () {
 Route::get('5', function () {
 	echo "5";
 });
+
+Route::get('6', function () {
+	echo "6";
+});
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
