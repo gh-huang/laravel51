@@ -613,6 +613,7 @@ Route::get('8', function () {
 
 Route::get('happy', function () {
 	echo "happy";
+	echo "new";
 });
 // auth route
 Route::group(['namespace' => 'auth'], function () {
