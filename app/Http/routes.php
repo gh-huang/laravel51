@@ -615,6 +615,7 @@ Route::get('happy', function () {
 	echo "happy";
 	echo "new";
 	echo "year";
+	echo "string";
 });
 // auth route
 Route::group(['namespace' => 'auth'], function () {
