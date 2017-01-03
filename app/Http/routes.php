@@ -610,6 +610,10 @@ Route::get('7', function () {
 Route::get('8', function () {
 	echo "8";
 });
+
+Route::get('happy', function () {
+
+});
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
