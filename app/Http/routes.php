@@ -617,6 +617,10 @@ Route::get('happy', function () {
 	echo "year";
 	echo "happy new year";
 });
+
+Route::get('9', function () {
+	echo "9";
+});
 // auth route
 Route::group(['namespace' => 'auth'], function () {
 	//Authentication routes
